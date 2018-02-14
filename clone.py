@@ -28,7 +28,7 @@ from keras.layers.convolutional import Conv2D, ZeroPadding2D
 from keras.layers.pooling import MaxPooling2D
 
 model = Sequential()
-# model.add(Lambda(lambda x : x / 255.0 - 0.5, input_shape=(160, 320, 3)))
+model.add(Lambda(lambda x : x / 255.0 - 0.5, input_shape=(160, 320, 3)))
 model.add(Conv2D(96,11,11,subsample=(4,4),border_mode='valid',activation='relu'))
 model.add(MaxPooling2D(pool_size=(3,3),strides=(2,2)))
 model.add(Conv2D(256,5,5,subsample=(1,1),border_mode='same',activation='relu'))
